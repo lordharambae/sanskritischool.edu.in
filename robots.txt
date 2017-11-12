@@ -1,0 +1,12 @@
+User-agent: *
+Disallow: /node_modules/
+Disallow: /es/
+Disallow: /pug/
+Disallow: /styl/
+Disallow: README.md
+Disallow: .gitignore
+Disallow: .gulpfile.js
+Disallow: .package.json
+Disallow: .package-lock.json
+Disallow: .babelrc
+Disallow: .eslintrc.json
