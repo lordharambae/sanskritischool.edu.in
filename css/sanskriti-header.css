@@ -1,0 +1,66 @@
+section.sanskriti-header {
+  width: 100%;
+  height: 140px;
+  display: flex;
+  flex-flow: column wrap;
+  z-index: 1;
+}
+section.sanskriti-header > div.sanskriti-brand {
+  width: 100%;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #233241;
+}
+section.sanskriti-header h1.sanskriti-text.heading {
+  font: 100 32px/1 "Engravers Old English";
+  color: #fff;
+}
+section.sanskriti-header div.sanskriti-nav {
+  width: 100%;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+}
+section.sanskriti-header div.sanskriti-nav[active="false"] {
+  display: none;
+}
+section.sanskriti-header div.sanskriti-nav[active="true"] {
+  display: flex;
+}
+section.sanskriti-header div.sanskriti-nav.primary {
+  background: #233241;
+}
+section.sanskriti-header div.sanskriti-nav.secondary {
+  background: #1e2d3c;
+}
+section.sanskriti-header div.sanskriti-nav.secondary div.sanskriti-nav-list[active="false"] {
+  display: none;
+}
+section.sanskriti-header div.sanskriti-nav.secondary div.sanskriti-nav-list[active="true"] {
+  display: flex;
+}
+section.sanskriti-header div.sanskriti-nav div.sanskriti-nav-list {
+  padding: 13px;
+  flex: 0 1 auto;
+  overflow: auto;
+  font: 300 14px/1 "Open Sans";
+  letter-spacing: 2px;
+  white-space: nowrap;
+}
+section.sanskriti-header div.sanskriti-nav div.sanskriti-nav-list::-webkit-scrollbar {
+  display: none;
+}
+section.sanskriti-header div.sanskriti-nav div.sanskriti-nav-list a.sanskriti-list-item {
+  padding: 0 13px;
+}
+section.sanskriti-header div.sanskriti-nav div.sanskriti-nav-list a.sanskriti-list-item:link,
+section.sanskriti-header div.sanskriti-nav div.sanskriti-nav-list a.sanskriti-list-item:visited {
+  color: #96a0aa;
+}
+section.sanskriti-header div.sanskriti-nav div.sanskriti-nav-list a.sanskriti-list-item:hover,
+section.sanskriti-header div.sanskriti-nav div.sanskriti-nav-list a.sanskriti-list-item:visited:hover,
+section.sanskriti-header div.sanskriti-nav div.sanskriti-nav-list a.sanskriti-list-item:focus {
+  color: #c0c6cc;
+}
