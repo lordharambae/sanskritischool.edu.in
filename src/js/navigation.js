@@ -2,15 +2,9 @@ var navbar = document.querySelector('section.navigation');
 var header = document.querySelector('div.header');
 var links = document.querySelector('div.links');
 
-var linkList = [document.querySelector('div.link.about-us'),
-				document.querySelector('div.link.curriculum'),
-				document.querySelector('div.link.admissions'),
-				document.querySelector('div.link.infrastructure')];
-var barList = [document.querySelector('div.level2.about-us'),
-				document.querySelector('div.level2.curriculum'),
-				document.querySelector('div.level2.admissions'),
-				document.querySelector('div.level2.infrastructure'),
-				document.querySelector('div.level1')];
+var linkList = Array.prototype.slice.call(document.querySelectorAll('div.link.dropdown'));
+var barList = Array.prototype.slice.call(document.querySelectorAll('div.level2'));
+barList.push(document.querySelector('div.level1'))
 
 var headerHeight = header.clientHeight;
 var minHeightTrue = (headerHeight === 55 ? true : false);
@@ -18,6 +12,7 @@ var minHeightTrue = (headerHeight === 55 ? true : false);
 var dropped = false;
 var scrolled = false;
 
+//onScroll header fixed position
 window.addEventListener('scroll', function() {
 	var scrollHeight = window.scrollY;
 	if (scrollHeight >= headerHeight) {
@@ -43,7 +38,7 @@ function show(bar, link) {
 		header.style.height = '37.5%';
 		links.style.height = '12.5vh';
 	}
-	link.style.background = '#000029';
+	link.style.background = '#2c3e50';
 	bar.classList.add('flex');
 	bar.classList.remove('nodisplay');	
 }
@@ -57,6 +52,8 @@ function hide(bar, link) {
 	bar.classList.remove('flex');
 }
 
+//Adding eventListers to all level 1 items having
+//corresponding submenu and triggering the respective functions
 for (let i = 0; i < linkList.length; i++) {
 	(function(i) {
 		linkList[i].addEventListener('click', function() {
@@ -73,6 +70,7 @@ for (let i = 0; i < linkList.length; i++) {
 	}(i))
 }
 
+//Enable vertical-scrolling on the horizontal-scroll divs
 for (let i = 0; i < barList.length; i++) {
 	(function(i) {
 		function scrollHorizontally(e) {

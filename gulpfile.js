@@ -14,7 +14,9 @@ const surge = require("gulp-surge");
 
 gulp.task('pug', function() {
 	return gulp.src(['src/pug/**/*.pug', '!src/pug/includes/*'])
-	.pipe(pug())
+	.pipe(pug({
+		pretty: true
+	}))
 	.pipe(gulp.dest('dist/html'));
 })
 
@@ -32,6 +34,7 @@ gulp.task('stylus', function() {
 gulp.task('scripts', function() {
 	return gulp.src('src/js/*.js')
 	.pipe(babel({
+		comments: false,
 		presets: ['env'],
 		minified: true
 	}))
